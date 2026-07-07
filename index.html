@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     PRIMARY SEO META TAGS
+     ============================================================ -->
+<title>Custom T-Shirt Design Studio — Streetwear, Vintage & Typography Merch | Order on Fiverr</title>
+<meta name="title" content="Custom T-Shirt Design Studio — Streetwear, Vintage & Typography Merch">
+<meta name="description" content="Print-ready custom t-shirt designs for brands, streetwear labels and merch drops. Unlimited revisions, commercial license, 24–48h delivery. Order your design on Fiverr today.">
+<meta name="keywords" content="t-shirt design, custom shirt design, streetwear graphics, fiverr t-shirt designer, merch design, vector t-shirt art, print ready design">
+<meta name="author" content="Earn More Daily Studio">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example.com/">
+
+<!-- ============================================================
+     OPEN GRAPH / FACEBOOK
+     ============================================================ -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:title" content="Custom T-Shirt Design Studio — Print-Ready Streetwear & Merch Art">
+<meta property="og:description" content="From concept to press-ready file in 48 hours. Custom t-shirt, streetwear and merch designs built for real print production.">
+<meta property="og:image" content="https://example.com/og-image.jpg">
+
+<!-- ============================================================
+     TWITTER CARD
+     ============================================================ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://example.com/">
+<meta name="twitter:title" content="Custom T-Shirt Design Studio — Print-Ready Streetwear & Merch Art">
+<meta name="twitter:description" content="From concept to press-ready file in 48 hours. Custom t-shirt, streetwear and merch designs built for real print production.">
+<meta name="twitter:image" content="https://example.com/og-image.jpg">
+
+<!-- ============================================================
+     FAVICON (placeholder — replace /favicon.svg with your own mark)
+     ============================================================ -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230B0B0E'/%3E%3Ccircle cx='11' cy='16' r='3' fill='%23FF3E7F'/%3E%3Ccircle cx='19' cy='16' r='3' fill='%232FE6C7' fill-opacity='0.85'/%3E%3C/svg%3E">
+
+<!-- ============================================================
+     FONTS — Space Grotesk (display) / Inter (body) / JetBrains Mono (labels)
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* =====================================================================
+   DESIGN TOKENS
+   Palette is built from screen-printing ink: near-black canvas, three
+   process-ink accents (magenta / cyan / yellow) that intentionally
+   sit slightly "off-register" wherever they're paired — a nod to
+   multi-color screen print separations.
+   ===================================================================== */
+:root{
+  --ink:        #0B0B0E;   /* base canvas */
+  --ink-2:      #131318;   /* raised surface */
+  --ink-3:      #1B1B22;   /* card surface */
+  --line:       rgba(245,243,238,0.09);
+  --paper:      #F5F3EE;   /* primary text */
+  --paper-dim:  #A8A6A3;   /* secondary text */
+  --paper-faint:#6E6D6F;
+
+  --magenta:    #FF3E7F;
+  --cyan:       #2FE6C7;
+  --yellow:     #FFC93C;
+  --violet:     #7C5CFF;
+
+  --grad-brand: linear-gradient(120deg, var(--magenta) 0%, var(--violet) 55%, var(--cyan) 100%);
+
+  --radius-sm:  10px;
+  --radius-md:  18px;
+  --radius-lg:  28px;
+
+  --shadow-soft: 0 20px 60px -20px rgba(0,0,0,0.6);
+  --shadow-glow-magenta: 0 0 0 1px rgba(255,62,127,0.25), 0 20px 50px -20px rgba(255,62,127,0.35);
+  --shadow-glow-cyan: 0 0 0 1px rgba(47,230,199,0.25), 0 20px 50px -20px rgba(47,230,199,0.35);
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --container: 1180px;
+}
+
+/* =====================================================================
+   RESET / BASE
+   ===================================================================== */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; background:none; border:none; cursor:pointer; }
+ul{ list-style:none; }
+h1,h2,h3,h4{ font-family:'Space Grotesk',sans-serif; font-weight:600; line-height:1.1; letter-spacing:-0.02em; }
+.container{ width:100%; max-width:var(--container); margin:0 auto; padding:0 24px; }
+
+:focus-visible{ outline:2px solid var(--cyan); outline-offset:3px; border-radius:4px; }
+
+/* Background texture: faint grain + soft radial ink glows */
+body::before{
+  content:"";
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(60% 40% at 15% 0%, rgba(124,92,255,0.14), transparent 60%),
+    radial-gradient(50% 35% at 100% 15%, rgba(47,230,199,0.10), transparent 60%),
+    radial-gradient(45% 30% at 50% 100%, rgba(255,62,127,0.10), transparent 60%);
+}
+.grain{
+  position:fixed; inset:0; z-index:1; pointer-events:none; opacity:0.035; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* =====================================================================
+   REGISTRATION-MARK SIGNATURE ELEMENT
+   Small offset-crosshair icon used throughout as the page's structural
+   motif (eyebrows, bullets, section labels) — echoes the print
+   registration marks used to align screen-print color separations.
+   ===================================================================== */
+.reg-mark{
+  position:relative; width:16px; height:16px; flex:none; display:inline-block;
+}
+.reg-mark::before,.reg-mark::after{
+  content:""; position:absolute; inset:0; border-radius:50%; border:1.5px solid currentColor; opacity:0.9;
+}
+.reg-mark::after{
+  background:
+    linear-gradient(currentColor,currentColor) center/1.5px 100% no-repeat,
+    linear-gradient(currentColor,currentColor) center/100% 1.5px no-repeat;
+}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:'JetBrains Mono',monospace; font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--cyan); margin-bottom:18px;
+}
+.eyebrow .reg-mark{ color:var(--magenta); }
+
+/* =====================================================================
+   SCROLL REVEAL
+   ===================================================================== */
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+.reveal-stagger.is-visible > *{ transition-delay:calc(var(--i,0) * 90ms); }
+
+/* =====================================================================
+   NAVBAR
+   ===================================================================== */
+.navbar{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:18px 0;
+  transition:background 0.4s var(--ease), border-color 0.4s var(--ease), padding 0.4s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.navbar.scrolled{
+  background:rgba(11,11,14,0.75);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom-color:var(--line);
+  padding:13px 0;
+}
+.nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.brand{ display:flex; align-items:center; gap:10px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px; }
+.brand-mark{ width:34px; height:34px; border-radius:10px; background:var(--grad-brand); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-glow-magenta); }
+.brand-mark svg{ width:18px; height:18px; }
+
+.nav-links{ display:flex; align-items:center; gap:32px; }
+.nav-links a{ font-size:14.5px; color:var(--paper-dim); font-weight:500; position:relative; padding:4px 0; transition:color 0.25s; }
+.nav-links a::after{ content:""; position:absolute; left:0; bottom:0; height:1.5px; width:0; background:var(--grad-brand); transition:width 0.3s var(--ease); }
+.nav-links a:hover{ color:var(--paper); }
+.nav-links a:hover::after{ width:100%; }
+
+.nav-actions{ display:flex; align-items:center; gap:14px; }
+.nav-toggle{ display:none; width:38px; height:38px; align-items:center; justify-content:center; }
+.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{ content:""; display:block; width:20px; height:1.5px; background:var(--paper); position:relative; transition:transform 0.3s; }
+.nav-toggle span::before{ position:absolute; top:-6px; }
+.nav-toggle span::after{ position:absolute; top:6px; }
+
+/* =====================================================================
+   BUTTONS
+   ===================================================================== */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  padding:14px 26px; border-radius:999px; font-weight:600; font-size:14.5px;
+  cursor:pointer; white-space:nowrap; position:relative; overflow:hidden;
+  transition:transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.btn:active{ transform:scale(0.97); }
+.btn-primary{
+  background:var(--grad-brand); background-size:180% 180%; background-position:0% 50%;
+  color:#0B0B0E; box-shadow:var(--shadow-glow-magenta);
+}
+.btn-primary:hover{ background-position:100% 50%; transform:translateY(-2px); box-shadow:0 22px 55px -18px rgba(255,62,127,0.55); }
+.btn-ghost{
+  background:rgba(245,243,238,0.04); color:var(--paper); border:1px solid var(--line);
+}
+.btn-ghost:hover{ background:rgba(245,243,238,0.08); border-color:rgba(245,243,238,0.22); transform:translateY(-2px); }
+.btn-sm{ padding:10px 18px; font-size:13.5px; }
+.btn svg{ width:16px; height:16px; transition:transform 0.3s var(--ease); }
+.btn-primary:hover svg{ transform:translate(3px,-3px); }
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+.hero{
+  position:relative; padding:168px 0 110px; z-index:2; overflow:hidden;
+}
+.hero-inner{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; }
+.hero-copy h1{ font-size:clamp(38px,5.2vw,64px); margin-bottom:22px; }
+.hero-copy h1 .accent{ background:var(--grad-brand); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.hero-copy p.lead{ font-size:18px; color:var(--paper-dim); max-width:520px; margin-bottom:36px; }
+.hero-ctas{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:44px; }
+
+.hero-meta{ display:flex; align-items:center; gap:26px; flex-wrap:wrap; }
+.avatar-stack{ display:flex; }
+.avatar-stack span{
+  width:34px; height:34px; border-radius:50%; border:2px solid var(--ink);
+  margin-left:-10px; display:flex; align-items:center; justify-content:center;
+  font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700; color:#0B0B0E;
+}
+.avatar-stack span:first-child{ margin-left:0; }
+.hero-meta .stars{ color:var(--yellow); font-size:13px; letter-spacing:2px; }
+.hero-meta small{ display:block; color:var(--paper-faint); font-size:12.5px; margin-top:2px; }
+
+/* Hero visual: layered shirt illustration with floating ink blobs */
+.hero-visual{ position:relative; height:520px; display:flex; align-items:center; justify-content:center; }
+.hero-glow{
+  position:absolute; width:420px; height:420px; border-radius:50%;
+  background:radial-gradient(circle,rgba(124,92,255,0.35),transparent 70%);
+  filter:blur(10px); animation:pulse-glow 7s ease-in-out infinite;
+}
+@keyframes pulse-glow{ 0%,100%{ transform:scale(1); opacity:0.8;} 50%{ transform:scale(1.15); opacity:1;} }
+
+.shirt-svg{ position:relative; width:340px; z-index:3; animation:float-shirt 6s ease-in-out infinite; filter:drop-shadow(0 30px 40px rgba(0,0,0,0.55)); }
+@keyframes float-shirt{ 0%,100%{ transform:translateY(0) rotate(-1.5deg);} 50%{ transform:translateY(-18px) rotate(1.5deg);} }
+
+.floating-chip{
+  position:absolute; display:flex; align-items:center; gap:8px;
+  background:rgba(19,19,24,0.85); border:1px solid var(--line); backdrop-filter:blur(10px);
+  padding:10px 14px; border-radius:14px; font-size:12.5px; font-weight:600; box-shadow:var(--shadow-soft);
+  animation:drift 5.5s ease-in-out infinite;
+}
+.chip-1{ top:6%; left:0%; animation-delay:0s; }
+.chip-2{ bottom:12%; right:0%; animation-delay:1.2s; }
+.chip-3{ top:44%; right:-6%; animation-delay:2.4s; }
+@keyframes drift{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-12px);} }
+.floating-chip .dot{ width:8px; height:8px; border-radius:50%; }
+
+.hero-reg-marks{ position:absolute; inset:0; pointer-events:none; z-index:1; }
+.hero-reg-marks .reg-mark{ position:absolute; width:26px; height:26px; opacity:0.35; }
+.hero-reg-marks .reg-mark:nth-child(1){ top:2%; left:8%; color:var(--magenta); }
+.hero-reg-marks .reg-mark:nth-child(2){ bottom:4%; left:2%; color:var(--cyan); }
+.hero-reg-marks .reg-mark:nth-child(3){ top:8%; right:4%; color:var(--yellow); }
+
+/* =====================================================================
+   MARQUEE
+   ===================================================================== */
+.marquee-wrap{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:22px 0; overflow:hidden; position:relative; z-index:2; }
+.marquee{ display:flex; gap:56px; width:max-content; animation:scroll-marquee 26s linear infinite; }
+@keyframes scroll-marquee{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+.marquee span{ font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.08em; color:var(--paper-faint); text-transform:uppercase; display:flex; align-items:center; gap:12px; white-space:nowrap; }
+.marquee span em{ color:var(--cyan); font-style:normal; }
+
+/* =====================================================================
+   SECTION SHARED
+   ===================================================================== */
+.section{ position:relative; z-index:2; padding:110px 0; }
+.section-head{ max-width:640px; margin-bottom:56px; }
+.section-head h2{ font-size:clamp(30px,4vw,44px); margin-bottom:16px; }
+.section-head p{ color:var(--paper-dim); font-size:16.5px; }
+.section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+
+/* =====================================================================
+   STATS
+   ===================================================================== */
+.stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; }
+.stat-card{ background:var(--ink-2); padding:36px 28px; text-align:center; }
+.stat-num{ font-family:'Space Grotesk',sans-serif; font-size:clamp(30px,3.4vw,42px); font-weight:700; background:var(--grad-brand); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.stat-label{ margin-top:8px; font-size:13.5px; color:var(--paper-dim); }
+
+/* =====================================================================
+   SERVICES
+   ===================================================================== */
+.services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.service-card{
+  background:var(--ink-2); border:1px solid var(--line); border-radius:var(--radius-md);
+  padding:32px; transition:transform 0.4s var(--ease), border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  position:relative; overflow:hidden;
+}
+.service-card::before{
+  content:""; position:absolute; inset:0; opacity:0; background:var(--grad-brand); mix-blend-mode:overlay; transition:opacity 0.4s;
+}
+.service-card:hover{ transform:translateY(-6px); border-color:rgba(245,243,238,0.2); box-shadow:var(--shadow-soft); }
+.service-card:hover::before{ opacity:0.10; }
+.service-icon{
+  width:50px; height:50px; border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:22px;
+  background:rgba(255,255,255,0.05); border:1px solid var(--line); transition:transform 0.4s var(--ease), background 0.4s;
+}
+.service-card:hover .service-icon{ transform:rotate(-6deg) scale(1.08); }
+.service-icon svg{ width:24px; height:24px; }
+.service-card h3{ font-size:19px; margin-bottom:10px; }
+.service-card p{ color:var(--paper-dim); font-size:14.5px; }
+
+/* =====================================================================
+   PORTFOLIO — masonry-esque grid of generated art swatches
+   ===================================================================== */
+.portfolio-grid{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:130px; gap:16px; }
+.portfolio-item{
+  position:relative; border-radius:var(--radius-md); overflow:hidden; cursor:pointer;
+  border:1px solid var(--line);
+}
+.portfolio-item.tall{ grid-row:span 2; }
+.portfolio-item .art{ position:absolute; inset:0; transition:transform 0.6s var(--ease); }
+.portfolio-item:hover .art{ transform:scale(1.08) rotate(1deg); }
+.portfolio-overlay{
+  position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; padding:18px;
+  background:linear-gradient(to top, rgba(11,11,14,0.92), rgba(11,11,14,0) 55%);
+  opacity:0; transition:opacity 0.4s var(--ease);
+}
+.portfolio-item:hover .portfolio-overlay{ opacity:1; }
+.portfolio-overlay .tag{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--cyan); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:4px; }
+.portfolio-overlay h4{ font-family:'Space Grotesk',sans-serif; font-size:16px; }
+
+/* =====================================================================
+   WHY CHOOSE ME
+   ===================================================================== */
+.why-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.why-card{ padding:30px; border-radius:var(--radius-md); background:rgba(245,243,238,0.03); border:1px solid var(--line); transition:background 0.4s, border-color 0.4s, transform 0.4s var(--ease); }
+.why-card:hover{ background:rgba(245,243,238,0.06); border-color:rgba(245,243,238,0.2); transform:translateY(-4px); }
+.why-icon{ width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+.why-icon svg{ width:22px; height:22px; }
+.why-card h3{ font-size:17px; margin-bottom:8px; }
+.why-card p{ font-size:14px; color:var(--paper-dim); }
+
+/* =====================================================================
+   PROCESS
+   ===================================================================== */
+.process-track{ position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.process-track::before{
+  content:""; position:absolute; top:26px; left:6%; right:6%; height:1px;
+  background:repeating-linear-gradient(90deg, var(--line) 0 8px, transparent 8px 16px);
+  z-index:0;
+}
+.process-step{ position:relative; z-index:1; padding-top:0; }
+.process-num{
+  width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-family:'JetBrains Mono',monospace; font-weight:500; font-size:13px; margin-bottom:22px;
+  background:var(--ink-2); border:1px solid var(--line); color:var(--cyan);
+}
+.process-step h3{ font-size:17px; margin-bottom:8px; }
+.process-step p{ font-size:14px; color:var(--paper-dim); }
+
+/* =====================================================================
+   TESTIMONIALS
+   ===================================================================== */
+.testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.testi-card{ background:var(--ink-2); border:1px solid var(--line); border-radius:var(--radius-md); padding:28px; display:flex; flex-direction:column; gap:16px; transition:transform 0.4s var(--ease), border-color 0.4s; }
+.testi-card:hover{ transform:translateY(-5px); border-color:rgba(245,243,238,0.2); }
+.testi-stars{ color:var(--yellow); font-size:13px; letter-spacing:2px; }
+.testi-quote{ font-size:14.5px; color:var(--paper); line-height:1.7; }
+.testi-person{ display:flex; align-items:center; gap:12px; margin-top:auto; }
+.testi-avatar{ width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:14px; color:#0B0B0E; flex:none; }
+.testi-name{ font-size:14px; font-weight:600; }
+.testi-role{ font-size:12.5px; color:var(--paper-faint); }
+
+/* =====================================================================
+   FAQ ACCORDION
+   ===================================================================== */
+.faq-list{ max-width:760px; margin:0 auto; display:flex; flex-direction:column; gap:12px; }
+.faq-item{ border:1px solid var(--line); border-radius:var(--radius-md); background:var(--ink-2); overflow:hidden; transition:border-color 0.3s; }
+.faq-item.open{ border-color:rgba(245,243,238,0.22); }
+.faq-question{ width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 24px; text-align:left; font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; }
+.faq-icon{ flex:none; width:22px; height:22px; position:relative; }
+.faq-icon::before,.faq-icon::after{ content:""; position:absolute; background:var(--cyan); border-radius:2px; transition:transform 0.35s var(--ease); }
+.faq-icon::before{ top:50%; left:0; width:100%; height:1.5px; transform:translateY(-50%); }
+.faq-icon::after{ top:0; left:50%; width:1.5px; height:100%; transform:translateX(-50%); }
+.faq-item.open .faq-icon::after{ transform:translateX(-50%) rotate(90deg); opacity:0; }
+.faq-answer{ max-height:0; overflow:hidden; transition:max-height 0.45s var(--ease); }
+.faq-answer p{ padding:0 24px 22px; color:var(--paper-dim); font-size:14.5px; line-height:1.7; max-width:640px; }
+
+/* =====================================================================
+   FINAL CTA
+   ===================================================================== */
+.final-cta{
+  position:relative; margin:0 24px; max-width:calc(var(--container) - 48px); margin-inline:auto;
+  border-radius:var(--radius-lg); overflow:hidden; padding:90px 40px; text-align:center;
+  background:var(--ink-2); border:1px solid var(--line);
+}
+.final-cta::before{
+  content:""; position:absolute; inset:-40%; background:var(--grad-brand); opacity:0.25; filter:blur(80px); animation:swirl 12s linear infinite;
+}
+@keyframes swirl{ from{ transform:rotate(0deg);} to{ transform:rotate(360deg);} }
+.final-cta > *{ position:relative; z-index:1; }
+.final-cta h2{ font-size:clamp(28px,4.4vw,46px); margin-bottom:18px; }
+.final-cta p{ color:var(--paper-dim); max-width:520px; margin:0 auto 36px; font-size:16.5px; }
+.btn-xl{ padding:19px 40px; font-size:16.5px; }
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+.footer{ position:relative; z-index:2; padding:64px 0 32px; border-top:1px solid var(--line); }
+.footer-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; margin-bottom:48px; }
+.footer-brand p{ color:var(--paper-dim); font-size:14px; max-width:320px; margin-top:14px; }
+.footer-cols{ display:flex; gap:64px; flex-wrap:wrap; }
+.footer-col h4{ font-size:13px; text-transform:uppercase; letter-spacing:0.08em; color:var(--paper-faint); margin-bottom:16px; font-family:'JetBrains Mono',monospace; font-weight:500; }
+.footer-col a{ display:block; font-size:14.5px; color:var(--paper-dim); margin-bottom:12px; transition:color 0.25s; }
+.footer-col a:hover{ color:var(--cyan); }
+.footer-bottom{ display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; padding-top:28px; border-top:1px solid var(--line); }
+.footer-bottom small{ color:var(--paper-faint); font-size:13px; }
+.social-icons{ display:flex; gap:10px; }
+.social-icons a{
+  width:38px; height:38px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+  transition:transform 0.3s var(--ease), border-color 0.3s, background 0.3s;
+}
+.social-icons a:hover{ transform:translateY(-3px); border-color:rgba(245,243,238,0.3); background:rgba(245,243,238,0.06); }
+.social-icons svg{ width:16px; height:16px; }
+
+.back-to-top{
+  position:fixed; bottom:26px; right:26px; z-index:90; width:48px; height:48px; border-radius:50%;
+  background:var(--ink-3); border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+  opacity:0; visibility:hidden; transform:translateY(12px); transition:all 0.35s var(--ease); box-shadow:var(--shadow-soft);
+}
+.back-to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
+.back-to-top:hover{ background:var(--ink-2); transform:translateY(-4px); }
+.back-to-top svg{ width:18px; height:18px; }
+
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
+@media (max-width:1000px){
+  .hero-inner{ grid-template-columns:1fr; }
+  .hero-visual{ order:-1; height:380px; }
+  .stats-grid{ grid-template-columns:repeat(2,1fr); }
+  .services-grid,.why-grid,.testi-grid{ grid-template-columns:repeat(2,1fr); }
+  .portfolio-grid{ grid-template-columns:repeat(3,1fr); }
+  .process-track{ grid-template-columns:repeat(2,1fr); row-gap:40px; }
+  .process-track::before{ display:none; }
+}
+@media (max-width:720px){
+  .nav-links{ position:fixed; top:64px; left:16px; right:16px; background:rgba(19,19,24,0.98); border:1px solid var(--line); border-radius:var(--radius-md); flex-direction:column; align-items:flex-start; padding:20px; gap:18px; transform:translateY(-12px); opacity:0; visibility:hidden; transition:all 0.35s var(--ease); backdrop-filter:blur(16px); }
+  .nav-links.open{ transform:translateY(0); opacity:1; visibility:visible; }
+  .nav-toggle{ display:flex; }
+  .nav-actions .btn-ghost{ display:none; }
+  .stats-grid,.services-grid,.why-grid,.testi-grid,.process-track{ grid-template-columns:1fr; }
+  .portfolio-grid{ grid-template-columns:repeat(2,1fr); }
+  .portfolio-item.tall{ grid-row:span 1; }
+  .footer-top{ flex-direction:column; }
+  .final-cta{ padding:60px 24px; margin:0 16px; }
+  .hero{ padding:130px 0 70px; }
+  .section{ padding:76px 0; }
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- =====================================================================
+     NAVIGATION
+     ===================================================================== -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" aria-label="Studio home">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M8 4L4 7v4h3v9h10v-9h3V7l-4-3-3 2h-2L8 4z" stroke="#0B0B0E" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </span>
+      Press&nbsp;&amp;&nbsp;Thread
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#why">Why Me</a>
+      <a href="#process">Process</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#" class="btn btn-ghost btn-sm fiverr-cta" data-fiverr>View Gig</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- =====================================================================
+     HERO
+     ===================================================================== -->
+<main id="top">
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy reveal">
+      <p class="eyebrow"><span class="reg-mark"></span> Custom Apparel Design Studio</p>
+      <h1>Shirts people <span class="accent">actually stop scrolling for.</span></h1>
+      <p class="lead">I design print-ready t-shirt, streetwear and merch graphics for brands and creators who need art that holds up on a garment — not just on a screen. Vector-clean, color-separated, ready for the press.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-primary" data-fiverr>
+          Order on Fiverr
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#portfolio" class="btn btn-ghost">View Portfolio</a>
+      </div>
+      <div class="hero-meta">
+        <div class="avatar-stack" aria-hidden="true">
+          <span style="background:var(--magenta)">JR</span>
+          <span style="background:var(--cyan)">KM</span>
+          <span style="background:var(--yellow)">TS</span>
+          <span style="background:var(--violet)">+2K</span>
+        </div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <small>Trusted by 2,000+ brands &amp; creators</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-reg-marks" aria-hidden="true">
+        <span class="reg-mark"></span><span class="reg-mark"></span><span class="reg-mark"></span>
+      </div>
+
+      <!-- Layered t-shirt illustration -->
+      <svg class="shirt-svg" viewBox="0 0 340 380" fill="none" role="img" aria-label="Illustration of a t-shirt with an abstract graphic design">
+        <defs>
+          <linearGradient id="shirtBody" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1B1B22"/>
+            <stop offset="100%" stop-color="#0F0F13"/>
+          </linearGradient>
+          <linearGradient id="graphicGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FF3E7F"/>
+            <stop offset="55%" stop-color="#7C5CFF"/>
+            <stop offset="100%" stop-color="#2FE6C7"/>
+          </linearGradient>
+        </defs>
+        <path d="M110 30 L60 55 L20 110 L55 145 L85 120 L85 350 L255 350 L255 120 L285 145 L320 110 L280 55 L230 30 C230 30 215 55 170 55 C125 55 110 30 110 30Z" fill="url(#shirtBody)" stroke="rgba(245,243,238,0.14)" stroke-width="1.5"/>
+        <circle cx="170" cy="185" r="58" fill="url(#graphicGrad)" opacity="0.92"/>
+        <path d="M130 200 Q170 140 210 200 Q170 230 130 200Z" fill="#0B0B0E" opacity="0.55"/>
+        <circle cx="170" cy="185" r="58" fill="none" stroke="#F5F3EE" stroke-opacity="0.25" stroke-width="1"/>
+        <circle cx="170" cy="185" r="72" fill="none" stroke="#F5F3EE" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="2 6"/>
+      </svg>
+
+      <div class="floating-chip chip-1"><span class="dot" style="background:var(--magenta)"></span> Vector · Print-Ready</div>
+      <div class="floating-chip chip-2"><span class="dot" style="background:var(--cyan)"></span> 24–48h Delivery</div>
+      <div class="floating-chip chip-3"><span class="dot" style="background:var(--yellow)"></span> Commercial License</div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee strip -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee">
+    <span><em>✦</em> Streetwear</span><span><em>✦</em> Vintage Wash</span><span><em>✦</em> Typography</span><span><em>✦</em> Minimal Line Art</span><span><em>✦</em> Merch Collections</span><span><em>✦</em> Band &amp; Tour Tees</span>
+    <span><em>✦</em> Streetwear</span><span><em>✦</em> Vintage Wash</span><span><em>✦</em> Typography</span><span><em>✦</em> Minimal Line Art</span><span><em>✦</em> Merch Collections</span><span><em>✦</em> Band &amp; Tour Tees</span>
+  </div>
+</div>
+
+<!-- =====================================================================
+     SOCIAL PROOF / STATS
+     ===================================================================== -->
+<section class="section" aria-label="Studio statistics">
+  <div class="container">
+    <div class="stats-grid reveal">
+      <div class="stat-card"><div class="stat-num" data-count="1400">0</div><p class="stat-label">Designs Delivered</p></div>
+      <div class="stat-card"><div class="stat-num" data-count="98" data-suffix="%">0%</div><p class="stat-label">Client Satisfaction</p></div>
+      <div class="stat-card"><div class="stat-num" data-count="36" data-suffix="h">0h</div><p class="stat-label">Avg. Delivery Time</p></div>
+      <div class="stat-card"><div class="stat-num" data-count="5" data-suffix="★">0★</div><p class="stat-label">Average Rating</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     SERVICES
+     ===================================================================== -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="reg-mark"></span> What I Design</p>
+      <h2>Six ways to put art on a garment.</h2>
+      <p>Every project starts from the same place — a concept sketch and a conversation about how it'll actually print.</p>
+    </div>
+    <div class="services-grid reveal-stagger">
+      <!-- Service cards -->
+      <div class="service-card reveal" style="--i:0">
+        <div class="service-icon" style="background:rgba(255,62,127,0.12); border-color:rgba(255,62,127,0.25); color:var(--magenta);">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 3L5 6v3h2v11h10V9h2V6l-4-3-2 2h-2L9 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Custom T-Shirt Design</h3>
+        <p>Original artwork built around your idea, brand or story — from rough sketch to final vector.</p>
+      </div>
+      <div class="service-card reveal" style="--i:1">
+        <div class="service-icon" style="background:rgba(47,230,199,0.12); border-color:rgba(47,230,199,0.25); color:var(--cyan);">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 20L14 4l6 4-10 16z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l6 4" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Streetwear Graphics</h3>
+        <p>Bold, drop-ready graphics with the layered texture and edge that streetwear labels live on.</p>
+      </div>
+      <div class="service-card reveal" style="--i:2">
+        <div class="service-icon" style="background:rgba(255,201,60,0.12); border-color:rgba(255,201,60,0.25); color:var(--yellow);">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.6"/><path d="M8 14c1.5 1.4 6.5 1.4 8 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Vintage Designs</h3>
+        <p>Distressed textures, retro type and worn-in color palettes that feel pulled from a thrift rack.</p>
+      </div>
+      <div class="service-card reveal" style="--i:3">
+        <div class="service-icon" style="background:rgba(124,92,255,0.12); border-color:rgba(124,92,255,0.25); color:var(--violet);">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h10M4 17h13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Typography Shirts</h3>
+        <p>Lettering-led designs — hand type, custom wordmarks and layouts where the words are the art.</p>
+      </div>
+      <div class="service-card reveal" style="--i:4">
+        <div class="service-icon" style="background:rgba(255,62,127,0.12); border-color:rgba(255,62,127,0.25); color:var(--magenta);">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="5" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.6"/><rect x="13" y="13" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.6"/><path d="M11 8h4M8 11v4" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3>Minimal Designs</h3>
+        <p>One-color line work and negative-space concepts — restrained, wearable, everyday-ready.</p>
+      </div>
+      <div class="service-card reveal" style="--i:5">
+        <div class="service-icon" style="background:rgba(47,230,199,0.12); border-color:rgba(47,230,199,0.25); color:var(--cyan);">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 8l8-4 8 4-8 4-8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 8v8l8 4 8-4V8" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Merch Collections</h3>
+        <p>Cohesive multi-piece drops — tees, hoodies and accessories sharing one visual system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     PORTFOLIO
+     ===================================================================== -->
+<section class="section" id="portfolio">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="reg-mark"></span> Selected Work</p>
+      <h2>A press check, not a mood board.</h2>
+      <p>A sample of recent concepts — every piece here was built to survive an actual screen or DTF print run.</p>
+    </div>
+    <div class="portfolio-grid reveal-stagger">
+      <div class="portfolio-item tall reveal" style="--i:0">
+        <div class="art" style="background:linear-gradient(155deg,#FF3E7F,#7C5CFF);"></div>
+        <div class="portfolio-overlay"><span class="tag">Streetwear</span><h4>Concrete Bloom</h4></div>
+      </div>
+      <div class="portfolio-item reveal" style="--i:1">
+        <div class="art" style="background:linear-gradient(155deg,#1B1B22,#2FE6C7);"></div>
+        <div class="portfolio-overlay"><span class="tag">Minimal</span><h4>Quiet Signal</h4></div>
+      </div>
+      <div class="portfolio-item reveal" style="--i:2">
+        <div class="art" style="background:linear-gradient(155deg,#FFC93C,#FF3E7F);"></div>
+        <div class="portfolio-overlay"><span class="tag">Typography</span><h4>Loudmouth</h4></div>
+      </div>
+      <div class="portfolio-item tall reveal" style="--i:3">
+        <div class="art" style="background:linear-gradient(155deg,#7C5CFF,#2FE6C7);"></div>
+        <div class="portfolio-overlay"><span class="tag">Merch Drop</span><h4>Nightshift Set</h4></div>
+      </div>
+      <div class="portfolio-item reveal" style="--i:4">
+        <div class="art" style="background:linear-gradient(155deg,#0F0F13,#FF3E7F);"></div>
+        <div class="portfolio-overlay"><span class="tag">Vintage</span><h4>Faded Route 9</h4></div>
+      </div>
+      <div class="portfolio-item reveal" style="--i:5">
+        <div class="art" style="background:linear-gradient(155deg,#2FE6C7,#7C5CFF);"></div>
+        <div class="portfolio-overlay"><span class="tag">Streetwear</span><h4>Static Bloc</h4></div>
+      </div>
+      <div class="portfolio-item reveal" style="--i:6">
+        <div class="art" style="background:linear-gradient(155deg,#FF3E7F,#FFC93C);"></div>
+        <div class="portfolio-overlay"><span class="tag">Typography</span><h4>Slow Burn</h4></div>
+      </div>
+      <div class="portfolio-item reveal" style="--i:7">
+        <div class="art" style="background:linear-gradient(155deg,#1B1B22,#7C5CFF);"></div>
+        <div class="portfolio-overlay"><span class="tag">Minimal</span><h4>Low Orbit</h4></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     WHY CHOOSE ME
+     ===================================================================== -->
+<section class="section" id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="reg-mark"></span> Why Work With Me</p>
+      <h2>Built for people who actually print.</h2>
+      <p>Six things every delivery includes, no matter the package.</p>
+    </div>
+    <div class="why-grid reveal-stagger">
+      <div class="why-card reveal" style="--i:0">
+        <div class="why-icon" style="background:rgba(255,62,127,0.12); color:var(--magenta);"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>Fast Delivery</h3><p>First concepts land in 24–48 hours, so momentum never stalls.</p>
+      </div>
+      <div class="why-card reveal" style="--i:1">
+        <div class="why-icon" style="background:rgba(47,230,199,0.12); color:var(--cyan);"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>Unlimited Creativity</h3><p>No template libraries — every concept is drawn from scratch for your brief.</p>
+      </div>
+      <div class="why-card reveal" style="--i:2">
+        <div class="why-icon" style="background:rgba(255,201,60,0.12); color:var(--yellow);"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3>Commercial License</h3><p>Full usage rights on delivery — sell, print and merchandise freely.</p>
+      </div>
+      <div class="why-card reveal" style="--i:3">
+        <div class="why-icon" style="background:rgba(124,92,255,0.12); color:var(--violet);"><svg viewBox="0 0 24 24" fill="none"><path d="M4 17V7a2 2 0 012-2h9l5 5v7a2 2 0 01-2 2H6a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6"/></svg></div>
+        <h3>Print-Ready Files</h3><p>Color-separated vectors and mockups, formatted for your printer of choice.</p>
+      </div>
+      <div class="why-card reveal" style="--i:4">
+        <div class="why-icon" style="background:rgba(255,62,127,0.12); color:var(--magenta);"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M8 12l3 3 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>High Resolution</h3><p>300+ DPI source files that hold detail at any print size.</p>
+      </div>
+      <div class="why-card reveal" style="--i:5">
+        <div class="why-icon" style="background:rgba(47,230,199,0.12); color:var(--cyan);"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18 3v4h-4M6 21v-4h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Unlimited Revisions</h3><p>We refine until the design earns a place on the shirt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     PROCESS
+     ===================================================================== -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-inline:auto;">
+      <p class="eyebrow" style="justify-content:center;"><span class="reg-mark"></span> The Print Run</p>
+      <h2>Four passes, one finished design.</h2>
+      <p>Numbered here because order genuinely matters — each pass builds directly on the last, like laying down separations on a screen.</p>
+    </div>
+    <div class="process-track reveal-stagger">
+      <div class="process-step reveal" style="--i:0"><div class="process-num">01</div><h3>Place Order</h3><p>Pick a package on Fiverr and share your brand, references and vibe.</p></div>
+      <div class="process-step reveal" style="--i:1"><div class="process-num">02</div><h3>Discuss Your Idea</h3><p>A short back-and-forth to lock concept, palette and print method.</p></div>
+      <div class="process-step reveal" style="--i:2"><div class="process-num">03</div><h3>Design Creation</h3><p>Concepts sketched, refined and built out as clean vector artwork.</p></div>
+      <div class="process-step reveal" style="--i:3"><div class="process-num">04</div><h3>Final Delivery</h3><p>Print-ready files, mockups and full commercial license, delivered.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     TESTIMONIALS
+     ===================================================================== -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow"><span class="reg-mark"></span> Client Reviews</p>
+      <h2>Words from people who pressed "order."</h2>
+    </div>
+    <div class="testi-grid reveal-stagger">
+      <div class="testi-card reveal" style="--i:0">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Sent over three rough reference images and got back a design that fit our streetwear line better than what our in-house team had drafted. Fast, sharp, and print-ready on the first pass."</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:var(--magenta)">JR</div>
+          <div><div class="testi-name">Jordan R.</div><div class="testi-role">Founder, Concrete Supply Co.</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal" style="--i:1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The vintage wash treatment was exactly the texture I couldn't describe in words but instantly recognized when I saw it. Delivered a day early, files were perfectly organized."</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:var(--cyan)">KM</div>
+          <div><div class="testi-name">Kayla M.</div><div class="testi-role">Merch Lead, Lowtide Records</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal" style="--i:2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Ordered a six-piece merch collection and every design shared the same visual DNA without feeling repetitive. Communication was clear from brief to final files."</p>
+        <div class="testi-person">
+          <div class="testi-avatar" style="background:var(--yellow)">TS</div>
+          <div><div class="testi-name">Theo S.</div><div class="testi-role">Creative Director, Nightshift Apparel</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     FAQ
+     ===================================================================== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-inline:auto;">
+      <p class="eyebrow" style="justify-content:center;"><span class="reg-mark"></span> Questions</p>
+      <h2>Before you order.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">What file formats will I receive? <span class="faq-icon"></span></button>
+        <div class="faq-answer"><p>You'll get layered source files (AI/EPS or PSD depending on the design), a high-resolution PNG, and a print-ready vector where the concept allows — plus a mockup for approval.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Do I own full commercial rights? <span class="faq-icon"></span></button>
+        <div class="faq-answer"><p>Yes. Every delivered design includes a full commercial license, so you're free to print, sell and merchandise it without additional fees.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">How many revisions are included? <span class="faq-icon"></span></button>
+        <div class="faq-answer"><p>Standard packages include unlimited revisions on the core concept until you're happy with the direction — see the Fiverr gig for package-specific details.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">Can you match my brand's existing style? <span class="faq-icon"></span></button>
+        <div class="faq-answer"><p>Absolutely — share brand guidelines, past designs or reference shirts and the new artwork will be built to sit naturally alongside them.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">What's the typical turnaround time?</span><span class="faq-icon"></span></button>
+        <div class="faq-answer"><p>Most first drafts are delivered within 24–48 hours. Larger merch collections may take longer — exact timing is listed on each Fiverr package.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     FINAL CTA
+     ===================================================================== -->
+<section class="section" style="padding-top:0;">
+  <div class="final-cta reveal">
+    <h2>Your next shirt starts with one click.</h2>
+    <p>Browse packages, send your brief, and get back a design built to actually print — not just look nice in a preview.</p>
+    <a href="#" class="btn btn-primary btn-xl" data-fiverr>
+      Order on Fiverr Now
+      <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+</main>
+
+<!-- =====================================================================
+     FOOTER
+     ===================================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M8 4L4 7v4h3v9h10v-9h3V7l-4-3-3 2h-2L8 4z" stroke="#0B0B0E" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+          Press &amp; Thread
+        </a>
+        <p>Print-ready custom t-shirt and merch design, built by a designer who thinks in separations, not just pixels.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="#services">Services</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#process">Process</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <h4>Get Started</h4>
+          <a href="#" data-fiverr>Order on Fiverr</a>
+          <a href="#testimonials">Client Reviews</a>
+          <a href="#top">Back to Top</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>&copy; <span id="year"></span> Press &amp; Thread Studio. All rights reserved.</small>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+        <a href="#" aria-label="Pinterest"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M9 17c1-3 1.5-5.5 1.5-7A2.5 2.5 0 0113 7.5c1.4 0 2.2 1 2.2 2.4 0 1.5-1 3.7-1.5 5.1-.4 1.2.6 2.2 1.8 2.2 2.1 0 3.7-2.2 3.7-5.4 0-2.8-2-4.8-4.9-4.8-3.3 0-5.3 2.5-5.3 5 0 1 .4 2 .9 2.6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a>
+        <a href="#" data-fiverr aria-label="Fiverr gig"><svg viewBox="0 0 24 24" fill="none"><path d="M9 3L5 6v3h2v11h10V9h2V6l-4-3-2 2h-2L9 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* =====================================================================
+     CONFIG — replace this one value with your real Fiverr gig URL.
+     Every "Order on Fiverr" button/link on the page reads from here.
+     ===================================================================== */
+  const FIVERR_URL = "https://www.fiverr.com/YOUR_USERNAME/YOUR_GIG_SLUG";
+
+  document.querySelectorAll("[data-fiverr]").forEach(function(el){
+    el.setAttribute("href", FIVERR_URL);
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener noreferrer");
+  });
+
+  /* Footer year */
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---------------------------------------------------------------------
+     Navbar scroll state + mobile menu
+     --------------------------------------------------------------------- */
+  const navbar = document.getElementById("navbar");
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  function onScroll(){
+    navbar.classList.toggle("scrolled", window.scrollY > 20);
+    document.getElementById("backToTop").classList.toggle("show", window.scrollY > 600);
+  }
+  window.addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+
+  navToggle.addEventListener("click", function(){
+    const isOpen = navLinks.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", isOpen);
+  });
+  navLinks.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click", function(){ navLinks.classList.remove("open"); });
+  });
+
+  /* ---------------------------------------------------------------------
+     Back to top
+     --------------------------------------------------------------------- */
+  document.getElementById("backToTop").addEventListener("click", function(){
+    window.scrollTo({ top:0, behavior:"smooth" });
+  });
+
+  /* ---------------------------------------------------------------------
+     Scroll reveal (IntersectionObserver)
+     --------------------------------------------------------------------- */
+  const revealEls = document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window){
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.15, rootMargin:"0px 0px -40px 0px" });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("is-visible"); });
+  }
+
+  /* ---------------------------------------------------------------------
+     Animated stat counters
+     --------------------------------------------------------------------- */
+  const counters = document.querySelectorAll(".stat-num");
+  function animateCounter(el){
+    const target = parseInt(el.getAttribute("data-count"), 10);
+    const suffix = el.getAttribute("data-suffix") || "";
+    const duration = 1400;
+    const start = performance.now();
+    function tick(now){
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if(progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if("IntersectionObserver" in window){
+    const statIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          animateCounter(entry.target);
+          statIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold:0.6 });
+    counters.forEach(function(el){ statIo.observe(el); });
+  } else {
+    counters.forEach(animateCounter);
+  }
+
+  /* ---------------------------------------------------------------------
+     FAQ accordion
+     --------------------------------------------------------------------- */
+  document.querySelectorAll(".faq-item").forEach(function(item){
+    const btn = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
+    btn.addEventListener("click", function(){
+      const isOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(function(openItem){
+        if(openItem !== item){
+          openItem.classList.remove("open");
+          openItem.querySelector(".faq-question").setAttribute("aria-expanded","false");
+          openItem.querySelector(".faq-answer").style.maxHeight = null;
+        }
+      });
+      item.classList.toggle("open", !isOpen);
+      btn.setAttribute("aria-expanded", String(!isOpen));
+      answer.style.maxHeight = !isOpen ? answer.scrollHeight + "px" : null;
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
